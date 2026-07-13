@@ -28,7 +28,7 @@ Welcome to my crib, this is what I do...
 
 [**eml-mcp**](https://github.com/MiguelRipoll23/eml-mcp) — MCP/CLI for interacting with your email using .eml files
 
-[**get-next-version**](https://github.com/MiguelRipoll23/get-next-version) — Bump version GitHub action that uses pull requests labels to easily publish a release
+[**get-next-version**](https://github.com/MiguelRipoll23/get-next-version) — Bump version GitHub action that uses pull request labels to calculate the next version
 
 <img src="contact.svg" alt="Don't @ me">
 
