@@ -27,3 +27,7 @@
 [**eml-mcp**](https://github.com/MiguelRipoll23/eml-mcp) ⭐ 1 — MCP/CLI for interacting with your email using .eml files
 
 **dbm-cli** ⭐ 0 — Database manager CLI for your agents **(Work in progress)**
+
+<img src="contact.svg" alt="Don't @ me">
+
+Discord: **phildunphy23** — want to discuss anything with me?
