@@ -1,6 +1,6 @@
-### Hey there 🫡
+# Hey there 🫡
 
-Welcome to my crib, this is what I do
+Welcome to my crib, this is what I do...
 
 ## Apps
 
