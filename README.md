@@ -4,7 +4,7 @@ Welcome to my crib, this is what I do...
 
 <img src="apps.svg" alt="Apps">
 
-[**homebridge-securitysystem**](https://github.com/MiguelRipoll23/homebridge-securitysystem) ⭐ 160 — Homebridge plugin that creates a security system accessory that can be triggered by HomeKit sensors
+[**homebridge-securitysystem**](https://github.com/MiguelRipoll23/homebridge-securitysystem) ⭐ 160 — Homebridge plugin that creates a virtual security system
 
 [**jwt-studio**](https://github.com/MiguelRipoll23/jwt-studio) ⭐ 1 — JWT manager for developing and testing
 
