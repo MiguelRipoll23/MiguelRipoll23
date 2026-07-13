@@ -1,98 +1,82 @@
 const fs = require('fs');
 const path = require('path');
-const { JSDOM } = require('jsdom');
-const fetch = require('node-fetch');
-
-const DOM_URL = 'https://api.github.com/repos/{repo_name}';
+const https = require('https');
 
 function getGitHubStars(repoName) {
-  const url = DOM_URL.replace('{repo_name}', repoName);
-  
-  try {
-    const response = fetch(url, {
-      headers: {
-        'Accept': 'application/vnd.github.v3+json'
-      }
+  return new Promise((resolve, reject) => {
+    const url = `https://api.github.com/repos/${repoName}`;
+
+    https.get(url, { headers: { 'User-Agent': 'Mozilla/5.0', 'Accept': 'application/vnd.github.v3+json' } }, (res) => {
+      let data = '';
+
+      res.on('data', (chunk) => { data += chunk; });
+      res.on('end', () => {
+        if (res.statusCode !== 200) {
+          console.error(`Failed to fetch data for ${repoName}: HTTP ${res.statusCode}`);
+          resolve(null);
+          return;
+        }
+
+        try {
+          const parsed = JSON.parse(data);
+          resolve(parsed.stargazers_count || 0);
+        } catch (err) {
+          console.error(`Error parsing response for ${repoName}: ${err.message}`);
+          resolve(null);
+        }
+      });
+    }).on('error', (err) => {
+      console.error(`Error fetching data for ${repoName}: ${err.message}`);
+      resolve(null);
     });
-    
-    if (response.status !== 200) {
-      console.error(`Failed to fetch data for ${repoName}: HTTP ${response.status}`);
-      return null;
-    }
-    
-    const data = response.json();
-    return data.stargazers_count || 0;
-    
-  } catch (error) {
-    console.error(`Error fetching data for ${repoName}: ${error.message}`);
-    return null;
-  }
+  });
 }
 
-function updateReadmeStars() {
+async function updateReadmeStars() {
   const readmePath = path.join(process.cwd(), 'README.md');
-  
+
   const content = fs.readFileSync(readmePath, 'utf8');
-  
-  // Pattern to find repositories with star counts
+
   const pattern = /(\*\*([^*]+)\*\*\s+⭐\s+(\d+)\s*—)/g;
-  
+
   let updatedContent = content;
   let updated = false;
-  
-  // Find all repo references in README
+
   const matches = Array.from(content.matchAll(pattern));
-  
+
   for (const match of matches) {
     const [fullMatch, , repoName, currentCount] = match;
-    
-    // Skip if not a valid GitHub repo name
+
     if (!/^[a-zA-Z0-9_-]+$/.test(repoName)) {
       continue;
     }
-    
-    console.log(`Updating ${repoName}...`);
-    
-    // Get fresh star count from GitHub
-    const newCount = getGitHubStars(repoName);
-    
+
+    process.stdout.write(`Updating ${repoName}... `);
+
+    const newCount = await getGitHubStars(repoName);
+
     if (newCount !== null && newCount !== parseInt(currentCount)) {
-      // Replace the pattern with new count
       const newMatch = `**${repoName}** ⭐ ${newCount} —`;
       updatedContent = updatedContent.replace(fullMatch, newMatch);
       updated = true;
-      console.log(`  Updated from ${currentCount} to ${newCount}`);
+      console.log(`✅ ${currentCount} → ${newCount}`);
     } else {
-      console.log(`  Already up to date (${currentCount})`);
+      console.log(`✓ (${currentCount})`);
     }
   }
-  
-  // If updates were made, write back to README
+
   if (updated) {
     fs.writeFileSync(readmePath, updatedContent, 'utf8');
-    
     console.log('README.md updated successfully');
-    
-    // Try to commit the changes
+
     try {
       const { execSync } = require('child_process');
-      
+
       execSync('git add README.md', { stdio: 'pipe' });
-      
-      const result = execSync('git commit -m "chore: update README star counts"', { 
-        captureOutput: true, 
-        encoding: 'utf8' 
-      });
-      
-      if (result) {
-        console.log('Changes committed successfully');
-      } else {
-        console.log('Failed to commit');
-      }
-      
-      // Also push the changes
+      execSync('git commit -m "chore: update README star counts"', { stdio: 'pipe' });
       execSync('git push', { stdio: 'pipe' });
-      
+
+      console.log('Changes committed and pushed successfully');
     } catch (error) {
       console.error(`Failed to commit/push changes: ${error.message}`);
     }
@@ -101,14 +85,12 @@ function updateReadmeStars() {
   }
 }
 
-function main() {
+async function main() {
   console.log('Starting README star counts update...');
-  updateReadmeStars();
+  await updateReadmeStars();
   console.log('Done!');
 }
 
-if (require.main === module) {
-  main();
-}
+main();
 
 module.exports = { updateReadmeStars };
