@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="110" height="24" viewBox="0 0 110 24">
   <text x="0" y="18" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
-    <tspan fill="#ff4444">Don't</tspan>
+    <tspan fill="#ff4444" text-decoration="line-through">Don't</tspan>
     <tspan fill="#000000"> @ me</tspan>
   </text>
 </svg>
