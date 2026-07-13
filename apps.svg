@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="68" height="36" viewBox="0 0 68 36">
-  <rect width="68" height="36" fill="#ff69b4"/>
-  <text x="34" y="24" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">Apps</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="40" viewBox="0 0 72 40">
+  <g transform="translate(2 2) rotate(3 34 18)">
+    <rect width="68" height="36" fill="#ff69b4"/>
+    <text x="34" y="24" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">Apps</text>
+  </g>
 </svg>
