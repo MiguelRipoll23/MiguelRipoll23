@@ -1,19 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="116" height="46" viewBox="0 0 116 46">
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="46" viewBox="0 0 120 46">
   <path
-    d="M9 3
-       H102
-       C107.5 3 112 8 112 14
+    d="M12 3
+       H108
+       C114 3 118 8 118 14
        V25
-       C112 31 107.5 36 102 36
-       H25
-       C20 36 15 39 10 44
+       C118 31 114 36 108 36
+       H24
+       C20 36 16 38 10 43
        C12 39 12 36 8 36
-       H9
-       C4 36 0 31 0 25
+       H12
+       C6 36 2 31 2 25
        V14
-       C0 8 4 3 9 3Z"
+       C2 8 6 3 12 3Z"
     fill="#12bdff"/>
-  <text x="58" y="28"
+  <text x="60" y="28"
         font-family="Arial, sans-serif"
         font-size="20"
         font-weight="bold"
