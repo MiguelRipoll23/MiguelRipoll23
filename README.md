@@ -1,6 +1,6 @@
 # Hey there 🫡
 
-<img src="tagline.svg" alt="Welcome to my crib, this is what I do...">
+**Welcome to my crib, this is what I do...**
 
 <img src="apps.svg" alt="Apps">
 
