@@ -1,9 +1,10 @@
-const fs = require('fs');
-const path = require('path');
-const https = require('https');
+import fs from 'fs';
+import path from 'path';
+import https from 'https';
+import { execSync } from 'child_process';
 
 function getGitHubStars(repoName) {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     const url = `https://api.github.com/repos/${repoName}`;
 
     https.get(url, { headers: { 'User-Agent': 'Mozilla/5.0', 'Accept': 'application/vnd.github.v3+json' } }, (res) => {
@@ -34,28 +35,21 @@ function getGitHubStars(repoName) {
 
 async function updateReadmeStars() {
   const readmePath = path.join(process.cwd(), 'README.md');
-
   const content = fs.readFileSync(readmePath, 'utf8');
-
   const pattern = /(\*\*([^*]+)\*\*\s+⭐\s+(\d+)\s*—)/g;
 
   let updatedContent = content;
   let updated = false;
-
   const matches = Array.from(content.matchAll(pattern));
 
   for (const match of matches) {
     const [fullMatch, , repoName, currentCount] = match;
-
-    if (!/^[a-zA-Z0-9_-]+$/.test(repoName)) {
-      continue;
-    }
+    if (!/^[a-zA-Z0-9_-]+$/.test(repoName)) continue;
 
     process.stdout.write(`Updating ${repoName}... `);
+    const newCount = await getGitHubStars(`MiguelRipoll23/${repoName}`);
 
-    const newCount = await getGitHubStars(repoName);
-
-    if (newCount !== null && newCount !== parseInt(currentCount)) {
+    if (newCount !== null && newCount !== Number(currentCount)) {
       const newMatch = `**${repoName}** ⭐ ${newCount} —`;
       updatedContent = updatedContent.replace(fullMatch, newMatch);
       updated = true;
@@ -70,12 +64,9 @@ async function updateReadmeStars() {
     console.log('README.md updated successfully');
 
     try {
-      const { execSync } = require('child_process');
-
       execSync('git add README.md', { stdio: 'pipe' });
       execSync('git commit -m "chore: update README star counts"', { stdio: 'pipe' });
       execSync('git push', { stdio: 'pipe' });
-
       console.log('Changes committed and pushed successfully');
     } catch (error) {
       console.error(`Failed to commit/push changes: ${error.message}`);
@@ -85,12 +76,6 @@ async function updateReadmeStars() {
   }
 }
 
-async function main() {
-  console.log('Starting README star counts update...');
-  await updateReadmeStars();
-  console.log('Done!');
-}
-
-main();
-
-module.exports = { updateReadmeStars };
+console.log('Starting README star counts update...');
+await updateReadmeStars();
+console.log('Done!');
