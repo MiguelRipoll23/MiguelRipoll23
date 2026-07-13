@@ -1,8 +1,8 @@
 # Hey there 🫡
 
-<img src="tagline.svg" alt="Welcome to my crib, this is what I do...">
+<img src="tagline.svg?v1" alt="Welcome to my crib, this is what I do...">
 
-<img src="apps.svg" alt="Apps">
+<img src="apps.svg?v1" alt="Apps">
 
 [**homebridge-securitysystem**](https://github.com/MiguelRipoll23/homebridge-securitysystem) ⭐ 160 — Homebridge plugin that creates a security system accessory that can be triggered by HomeKit sensors
 
@@ -12,7 +12,7 @@
 
 **waypoints** ⭐ 0 — A launchpad for your agents **(Work in progress)**
 
-<img src="games.svg" alt="Games">
+<img src="games.svg?v1" alt="Games">
 
 [**hood-ball**](https://github.com/MiguelRipoll23/hood-ball) ⭐ 2 — Accelerate and smash your way to victory in a car-based multiplayer soccer battle
 
@@ -20,7 +20,7 @@
 
 [**mgo2-server**](https://github.com/MiguelRipoll23/mgo2-server) ⭐ 0 — Metal Gear Online 2 server that works out of the box
 
-<img src="utils.svg" alt="Utils">
+<img src="utils.svg?v1" alt="Utils">
 
 [**get-next-version**](https://github.com/MiguelRipoll23/get-next-version) ⭐ 7 — Bump version GitHub action that uses pull requests labels to easily publish a release
 
@@ -28,6 +28,6 @@
 
 **dbm-cli** ⭐ 0 — Database manager CLI for your agents **(Work in progress)**
 
-<img src="contact.svg" alt="Don't @ me">
+<img src="contact.svg?v1" alt="Don't @ me">
 
 Discord: **phildunphy23** — want to discuss anything with me?
