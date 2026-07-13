@@ -30,4 +30,4 @@
 
 <img src="contact.svg" alt="Don't @ me">
 
-Discord: **phildunphy23** — want to discuss anything with me?
+Want to discuss anything with me? [Send me a DM!](https://discord.com/users/phildunphy23)
