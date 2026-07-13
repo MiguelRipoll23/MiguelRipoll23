@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="174" height="36" viewBox="0 0 174 36">
   <text x="0" y="24" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
-    <tspan fill="#ff4444" text-decoration="line-through">Don't</tspan>
+    <tspan fill="#1c3144" text-decoration="line-through">Don't</tspan>
   </text>
   <rect x="64" y="0" width="76" height="36" fill="#f9aa2a"/>
   <text x="102" y="24" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">@ me</text>
