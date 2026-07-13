@@ -4,13 +4,13 @@ Welcome to my crib, this is what I do...
 
 <img src="apps.svg" alt="Apps">
 
-[**homebridge-securitysystem**](https://github.com/MiguelRipoll23/homebridge-securitysystem) — Homebridge plugin that creates a virtual security system
+**waypoints** — A launchpad for your agents **(Work in progress)**
 
 [**jwt-studio**](https://github.com/MiguelRipoll23/jwt-studio) — JWT manager for developing and testing
 
 [**whip-streamer**](https://github.com/MiguelRipoll23/whip-streamer) — Web-based streaming client for the WHIP protocol
 
-**waypoints** — A launchpad for your agents **(Work in progress)**
+[**homebridge-securitysystem**](https://github.com/MiguelRipoll23/homebridge-securitysystem) — Homebridge plugin that creates a virtual security system
 
 <img src="games.svg" alt="Games">
 
@@ -22,11 +22,11 @@ Welcome to my crib, this is what I do...
 
 <img src="utils.svg" alt="Utils">
 
-[**get-next-version**](https://github.com/MiguelRipoll23/get-next-version) — Bump version GitHub action that uses pull requests labels to easily publish a release
+**dbm-cli** — Database manager CLI for your agents **(Work in progress)**
 
 [**eml-mcp**](https://github.com/MiguelRipoll23/eml-mcp) — MCP/CLI for interacting with your email using .eml files
 
-**dbm-cli** — Database manager CLI for your agents **(Work in progress)**
+[**get-next-version**](https://github.com/MiguelRipoll23/get-next-version) — Bump version GitHub action that uses pull requests labels to easily publish a release
 
 <img src="contact.svg" alt="Don't @ me">
 
