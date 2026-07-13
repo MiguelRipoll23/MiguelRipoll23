@@ -6,7 +6,7 @@
 
 [**homebridge-securitysystem**](https://github.com/MiguelRipoll23/homebridge-securitysystem) ⭐ 160 — Homebridge plugin that creates a security system accessory that can be triggered by HomeKit sensors
 
-[**jwt-studio**](https://github.com/MiguelRipoll23/jwt-studio) ⭐ 1 — Manage your local tokens with ease
+[**jwt-studio**](https://github.com/MiguelRipoll23/jwt-studio) ⭐ 1 — JWT manager for developing and testing
 
 [**whip-streamer**](https://github.com/MiguelRipoll23/whip-streamer) ⭐ 1 — Web-based streaming client for the WHIP protocol
 
