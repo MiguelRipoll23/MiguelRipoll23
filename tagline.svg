@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="420" height="28" viewBox="0 0 420 28">
-  <text x="0" y="18" font-family="Arial, sans-serif" font-size="16">
+<svg xmlns="http://www.w3.org/2000/svg" width="350" height="22" viewBox="0 0 350 22">
+  <text x="0" y="15" font-family="Arial, sans-serif" font-size="13">
     <tspan fill="#000000">Welcome to my crib, </tspan>
-    <tspan fill="#0366d6">this is what I do...</tspan>
+    <tspan fill="#12bdff">this is what I do...</tspan>
   </text>
 </svg>
