@@ -1,6 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="130" height="40" viewBox="0 0 130 40">
-  <rect x="4" y="3" width="122" height="34" fill="#12bdff"/>
-  <text x="65" y="27" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffffff" text-anchor="middle">
+<svg xmlns="http://www.w3.org/2000/svg" width="116" height="46" viewBox="0 0 116 46">
+  <path
+    d="M9 3
+       H102
+       C107.5 3 112 8 112 14
+       V25
+       C112 31 107.5 36 102 36
+       H25
+       C20 36 15 39 10 44
+       C12 39 12 36 8 36
+       H9
+       C4 36 0 31 0 25
+       V14
+       C0 8 4 3 9 3Z"
+    fill="#12bdff"/>
+  <text x="58" y="28"
+        font-family="Arial, sans-serif"
+        font-size="20"
+        font-weight="bold"
+        fill="#ffffff"
+        text-anchor="middle">
     Hey there
   </text>
 </svg>
