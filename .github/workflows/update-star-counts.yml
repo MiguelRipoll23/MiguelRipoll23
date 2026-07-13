@@ -18,10 +18,10 @@ jobs:
 
       - name: Bundle with ESBuild
         run: |
-          npx esbuild scripts/update_readme_stars.js --bundle --platform=node --outfile=dist/update_stars.cjs
+          npx esbuild scripts/update_readme_stars.js --bundle --platform=node --format=esm --outfile=dist/update_stars.mjs
 
       - name: Update star counts
-        run: node dist/update_stars.cjs
+        run: node dist/update_stars.mjs
 
       - name: Commit and push changes
         run: |

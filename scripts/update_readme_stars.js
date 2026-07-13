@@ -7,27 +7,26 @@ function getGitHubStars(repoName) {
   return new Promise((resolve) => {
     const url = `https://api.github.com/repos/${repoName}`;
 
-    https.get(url, { headers: { 'User-Agent': 'Mozilla/5.0', 'Accept': 'application/vnd.github.v3+json' } }, (res) => {
+    https.get(url, {
+      headers: { 'User-Agent': 'Mozilla/5.0', 'Accept': 'application/vnd.github.v3+json' }
+    }, (res) => {
       let data = '';
-
       res.on('data', (chunk) => { data += chunk; });
       res.on('end', () => {
         if (res.statusCode !== 200) {
-          console.error(`Failed to fetch data for ${repoName}: HTTP ${res.statusCode}`);
+          console.error(`  Failed: HTTP ${res.statusCode}`);
           resolve(null);
           return;
         }
-
         try {
-          const parsed = JSON.parse(data);
-          resolve(parsed.stargazers_count || 0);
+          resolve(JSON.parse(data).stargazers_count || 0);
         } catch (err) {
-          console.error(`Error parsing response for ${repoName}: ${err.message}`);
+          console.error(`  Parse error: ${err.message}`);
           resolve(null);
         }
       });
     }).on('error', (err) => {
-      console.error(`Error fetching data for ${repoName}: ${err.message}`);
+      console.error(`  Error: ${err.message}`);
       resolve(null);
     });
   });
@@ -36,24 +35,31 @@ function getGitHubStars(repoName) {
 async function updateReadmeStars() {
   const readmePath = path.join(process.cwd(), 'README.md');
   const content = fs.readFileSync(readmePath, 'utf8');
-  const pattern = /(\*\*([^*]+)\*\*\s+⭐\s+(\d+)\s*—)/g;
+
+  // Matches both formats:
+  //   [**name**](https://github.com/owner/name) ⭐ N —
+  //   **name** ⭐ N —
+  const pattern = /(?:\[)?\*\*([^*]+)\*\*\]?(?:\((?:https:\/\/github\.com\/[\w-]+\/([\w.-]+))?\))?\s+⭐\s+(\d+)\s*—/g;
 
   let updatedContent = content;
   let updated = false;
   const matches = Array.from(content.matchAll(pattern));
 
   for (const match of matches) {
-    const [fullMatch, , repoName, currentCount] = match;
-    if (!/^[a-zA-Z0-9_-]+$/.test(repoName)) continue;
+    const [fullMatch, boldName, urlName, currentCount] = match;
+    const repoName = urlName || boldName;
+
+    if (!/^[\w.-]+$/.test(repoName)) continue;
 
     process.stdout.write(`Updating ${repoName}... `);
     const newCount = await getGitHubStars(`MiguelRipoll23/${repoName}`);
 
     if (newCount !== null && newCount !== Number(currentCount)) {
-      const newMatch = `**${repoName}** ⭐ ${newCount} —`;
-      updatedContent = updatedContent.replace(fullMatch, newMatch);
+      updatedContent = updatedContent.replace(fullMatch, fullMatch.replace(/\d+(?=\s*—)/, String(newCount)));
       updated = true;
       console.log(`✅ ${currentCount} → ${newCount}`);
+    } else if (newCount === null) {
+      console.log(`⚠ skipped`);
     } else {
       console.log(`✓ (${currentCount})`);
     }
@@ -61,7 +67,7 @@ async function updateReadmeStars() {
 
   if (updated) {
     fs.writeFileSync(readmePath, updatedContent, 'utf8');
-    console.log('README.md updated successfully');
+    console.log('\nREADME.md updated successfully');
 
     try {
       execSync('git add README.md', { stdio: 'pipe' });
@@ -69,7 +75,7 @@ async function updateReadmeStars() {
       execSync('git push', { stdio: 'pipe' });
       console.log('Changes committed and pushed successfully');
     } catch (error) {
-      console.error(`Failed to commit/push changes: ${error.message}`);
+      console.error(`Failed to commit/push: ${error.message}`);
     }
   } else {
     console.log('No updates needed');
