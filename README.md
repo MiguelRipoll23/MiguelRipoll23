@@ -1,6 +1,6 @@
 ### Hey there 🫡
 
-Prompting my way to heaven
+Welcome to my crib, this is what I do
 
 ## Apps
 
