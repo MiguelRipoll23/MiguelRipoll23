@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="350" height="22" viewBox="0 0 350 22">
-  <text x="0" y="15" font-family="Arial, sans-serif" font-size="13">
-    <tspan fill="#000000">Welcome to my crib, </tspan>
-  </text>
-  <rect x="122" y="0" width="120" height="22" fill="#12bdff" />
-  <text x="182" y="15" font-family="Arial, sans-serif" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold">this is what I do...</text>
-</svg>
