@@ -1,4 +1,4 @@
-<img src="salute.svg" alt="Hey there">
+<img src="welcome.svg" alt="Hey there">
 
 Welcome to my crib, this is what I do...
 
