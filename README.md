@@ -2,7 +2,7 @@
 
 Welcome to my crib, this is what I do...
 
-## Apps
+<img src="apps.svg" alt="Apps">
 
 [**homebridge-securitysystem**](https://github.com/MiguelRipoll23/homebridge-securitysystem) ⭐ 160 — Homebridge plugin that creates a security system accessory that can be triggered by HomeKit sensors
 
@@ -12,7 +12,7 @@ Welcome to my crib, this is what I do...
 
 **waypoints** ⭐ 0 — A launchpad for your agents **(Work in progress)**
 
-## Games
+<img src="games.svg" alt="Games">
 
 [**hood-ball**](https://github.com/MiguelRipoll23/hood-ball) ⭐ 2 — Accelerate and smash your way to victory in a car-based multiplayer soccer battle
 
@@ -20,7 +20,7 @@ Welcome to my crib, this is what I do...
 
 [**mgo2-server**](https://github.com/MiguelRipoll23/mgo2-server) ⭐ 0 — Metal Gear Online 2 server that works out of the box
 
-## Utils
+<img src="utils.svg" alt="Utils">
 
 [**get-next-version**](https://github.com/MiguelRipoll23/get-next-version) ⭐ 7 — Bump version GitHub action that uses pull requests labels to easily publish a release
 
