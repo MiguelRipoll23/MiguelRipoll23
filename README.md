@@ -12,7 +12,7 @@ Welcome to my crib, this is what I do...
 
 [**homebridge-securitysystem**](https://github.com/MiguelRipoll23/homebridge-securitysystem) — Homebridge plugin that creates a virtual security system
 
-[**tus-santander**](https://github.com/MiguelRipoll23/tus-santander) — Estimated times of arrivals and routes from Santander's public transit at a glance
+[**tus-santander**](https://github.com/MiguelRipoll23/tus-santander) — Transit web app for the city of Santander
 
 <img src="games.svg" alt="Games">
 
