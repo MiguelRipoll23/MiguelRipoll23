@@ -32,4 +32,4 @@ Welcome to my crib, this is what I do...
 
 <img src="contact.svg" alt="Don't @ me">
 
-Want to discuss anything with me? DM me on Discord: `@MiguelRipoll23`
+Want to discuss anything with me? DM me on Discord: `@phildunphy23`
