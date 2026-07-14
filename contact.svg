@@ -1,7 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="164" height="36" viewBox="0 0 164 36">
-  <text x="0" y="24" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
-    <tspan fill="#1c3144" text-decoration="line-through">Don't</tspan>
-  </text>
-  <rect x="64" y="0" width="66" height="36" fill="#f9aa2a"/>
-  <text x="97" y="24" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">@ me</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="84" height="40" viewBox="0 0 84 40">
+  <g transform="translate(2 2) rotate(-3 40 18)">
+    <rect width="80" height="36" rx="8" ry="8" fill="#f9aa2a"/>
+    <text x="40" y="24"
+          font-family="Arial, sans-serif"
+          font-size="18"
+          font-weight="bold"
+          fill="#ffffff"
+          text-anchor="middle">@ me</text>
+  </g>
 </svg>
