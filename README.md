@@ -24,7 +24,7 @@ Welcome to my crib, this is what I do...
 
 <img src="utils.svg" alt="Utils">
 
-[**dbm-cli**](https://github.com/MiguelRipoll23/dbm-cli) — Database manager CLI that uses the official clients
+[**dbm-cli**](https://github.com/MiguelRipoll23/dbm-cli) — CLI for managing your databases and interacting with them using agents
 
 [**eml-mcp**](https://github.com/MiguelRipoll23/eml-mcp) — MCP/CLI for interacting with your email using .eml files
 
