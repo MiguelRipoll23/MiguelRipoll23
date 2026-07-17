@@ -4,7 +4,7 @@ Welcome to my crib, this is what I do...
 
 <img src="apps.svg" alt="Apps">
 
-**waypoints** — Launchpad for your agents
+**waypoints** — Launchpad for your agents **(Work in progress)**
 
 [**jwt-studio**](https://github.com/MiguelRipoll23/jwt-studio) — JWT manager for developing and testing
 
