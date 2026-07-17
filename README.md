@@ -4,7 +4,7 @@ Welcome to my crib, this is what I do...
 
 <img src="apps.svg" alt="Apps">
 
-**waypoints** — Launchpad for your agents **(Work in progress)**
+**waypoints** — Launchpad for your agents
 
 [**jwt-studio**](https://github.com/MiguelRipoll23/jwt-studio) — JWT manager for developing and testing
 
@@ -24,7 +24,7 @@ Welcome to my crib, this is what I do...
 
 <img src="utils.svg" alt="Utils">
 
-**dbm-cli** — Database manager CLI that uses the official clients **(Work in progress)**
+[**dbm-cli**](https://github.com/MiguelRipoll23/dbm-cli) — Database manager CLI that uses the official clients
 
 [**eml-mcp**](https://github.com/MiguelRipoll23/eml-mcp) — MCP/CLI for interacting with your email using .eml files
 
