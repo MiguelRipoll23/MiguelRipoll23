@@ -4,8 +4,6 @@ Welcome to my crib, this is what I do...
 
 <img src="apps.svg" alt="Apps">
 
-**waypoints** — Launchpad for your agents **(Work in progress)**
-
 [**jwt-studio**](https://github.com/MiguelRipoll23/jwt-studio) — JWT manager for developing and testing
 
 [**whip-streamer**](https://github.com/MiguelRipoll23/whip-streamer) — Web-based streaming client for the WHIP protocol
